@@ -1,4 +1,4 @@
-name: CI
+name: Build and Test
 
 on: push
 
@@ -7,6 +7,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.22"
+      - name: Run build script
+        run: go build
   test:
     name: Run tests
     runs-on: ubuntu-latest
