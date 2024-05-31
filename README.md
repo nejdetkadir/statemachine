@@ -185,6 +185,10 @@ func main() {
 }
 ```
 
+## Examples
+Check out the [examples](examples/README.md) directory for more usage examples.
+
+
 ## Testing
 To run the tests, use go test:
 
